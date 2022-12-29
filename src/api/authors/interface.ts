@@ -1,6 +1,6 @@
 import { Author } from "@prisma/client";
 import { RequestHandler } from "express";
-import ResponseError from "../globalTypes/ResponseError";
+import { ResponseError } from "../globalTypes/ResponseError";
 
 type AuthorBodyCreate = {
   firstname: string;
