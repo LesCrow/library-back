@@ -3,7 +3,7 @@ import { User } from "@prisma/client";
 import { RequestHandler } from "express";
 
 type TUserWithoutPassword = Omit<User, "password">;
-type TUserRegisterBody = Pick<User, "email" | "name" | "password">;
+type TUserRegisterBody = Pick<User, "email" | "password">;
 
 type TLoginBody = {
   email: string;

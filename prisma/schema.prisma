@@ -16,11 +16,11 @@ model Book {
   title String
   author Author @relation(fields: [authorId], references: [id])
   authorId String
-  collection Collection @relation(fields: [collectionId], references: [id])
-  collectionId String
+  genre Genre @relation(fields: [genreId], references: [id])
+  genreId String
 }
 
-model Collection {
+model Genre {
     id String @id @unique @default(uuid())
     name String
     books Book[]

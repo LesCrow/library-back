@@ -1,10 +1,10 @@
-import { ICollectionHandlers } from "../interface";
+import { IGenreHandlers } from "../interface";
 import prisma from "../../../../prisma/client";
 
-const createCollection: ICollectionHandlers["create"] = async (req, res) => {
+const createGenre: IGenreHandlers["create"] = async (req, res) => {
   try {
     const { name } = req.body;
-    const newCollection = await prisma.collection.create({
+    const newCollection = await prisma.genre.create({
       data: {
         name,
       },
@@ -16,4 +16,4 @@ const createCollection: ICollectionHandlers["create"] = async (req, res) => {
   }
 };
 
-export default createCollection;
+export default createGenre;

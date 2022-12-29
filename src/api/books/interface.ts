@@ -1,22 +1,22 @@
+import { ResponseError } from "./../globalTypes/ResponseError";
 import { Book } from "@prisma/client";
 import { RequestHandler } from "express";
-import ResponseError from "../globalTypes/ResponseError";
 
 type BookBodyCreate = {
   title: string;
   authorId: string;
-  collectionId: string;
+  genreId: string;
 };
 
 type BookBodyUpdate = {
   title: string;
   authorId: string;
-  collectionId: string;
+  genreId: string;
 };
 
 type GetAllQueryParams = {
   author: "true" | undefined;
-  collection: "true" | undefined;
+  genre: "true" | undefined;
 };
 
 export interface BookHandlers {
