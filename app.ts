@@ -22,4 +22,5 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1", api);
+
 export default app;
