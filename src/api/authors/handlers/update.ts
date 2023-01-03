@@ -1,7 +1,7 @@
 import { AuthorHandlers } from "../interface";
 import prisma from "../../../../prisma/client";
 
-const updatedAuthor: AuthorHandlers["update"] = async (req, res) => {
+const updatedOneAuthor: AuthorHandlers["update"] = async (req, res) => {
   try {
     const { name } = req.body;
     const { id } = req.params;
@@ -16,8 +16,9 @@ const updatedAuthor: AuthorHandlers["update"] = async (req, res) => {
     });
     res.status(200).json(updatedAuthor);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
 
-export default updatedAuthor;
+export default updatedOneAuthor;

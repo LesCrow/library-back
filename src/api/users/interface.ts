@@ -17,6 +17,11 @@ export interface IUserHandlers {
     TUserWithoutPassword | ResponseError,
     TUserRegisterBody
   >;
+  update: RequestHandler<
+    { id: string },
+    TUserWithoutPassword | ResponseError,
+    TUserRegisterBody
+  >;
   delete: RequestHandler<
     { id: string },
     TUserWithoutPassword | ResponseError,
