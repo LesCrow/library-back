@@ -1,10 +1,10 @@
-import { ICollectionHandlers } from "../interface";
+import { IGenreHandlers } from "../interface";
 import prisma from "../../../../prisma/client";
 
-const getOneCollection: ICollectionHandlers["getOne"] = async (req, res) => {
+const getOneGenre: IGenreHandlers["getOne"] = async (req, res) => {
   const { id } = req.params;
   try {
-    const collection = await prisma.collection.findUniqueOrThrow({
+    const collection = await prisma.genre.findUniqueOrThrow({
       where: {
         id,
       },
@@ -16,4 +16,4 @@ const getOneCollection: ICollectionHandlers["getOne"] = async (req, res) => {
   }
 };
 
-export default getOneCollection;
+export default getOneGenre;

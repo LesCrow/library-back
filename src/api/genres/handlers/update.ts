@@ -1,12 +1,12 @@
-import { AuthorHandlers } from "../interface";
 import prisma from "../../../../prisma/client";
+import { IGenreHandlers } from "../interface";
 
-const updatedOneAuthor: AuthorHandlers["update"] = async (req, res) => {
+const updatedGenre: IGenreHandlers["update"] = async (req, res) => {
   try {
     const { name } = req.body;
     const { id } = req.params;
 
-    const updatedAuthor = await prisma.author.update({
+    const updatedGenre = await prisma.genre.update({
       where: {
         id,
       },
@@ -14,11 +14,10 @@ const updatedOneAuthor: AuthorHandlers["update"] = async (req, res) => {
         name,
       },
     });
-    res.status(200).json(updatedAuthor);
+    res.status(200).json(updatedGenre);
   } catch (error) {
-    console.log(error);
     res.status(500).json({ message: error });
   }
 };
 
-export default updatedOneAuthor;
+export default updatedGenre;
