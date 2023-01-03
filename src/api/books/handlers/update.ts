@@ -2,7 +2,7 @@ import { BookHandlers } from "../interface";
 import prisma from "../../../../prisma/client";
 
 const updateBook: BookHandlers["update"] = async (req, res) => {
-  const { title, authorId, genreId } = req.body;
+  const { title, authorId, genreId, alreadyRead } = req.body;
   try {
     const { id } = req.params;
 
@@ -14,6 +14,7 @@ const updateBook: BookHandlers["update"] = async (req, res) => {
         title,
         authorId,
         genreId,
+        alreadyRead,
       },
     });
     res.status(200).json(updatedBook);

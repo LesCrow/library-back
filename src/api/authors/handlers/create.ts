@@ -3,11 +3,10 @@ import prisma from "../../../../prisma/client";
 
 const createAuthor: AuthorHandlers["create"] = async (req, res) => {
   try {
-    const { firstname, lastname } = req.body;
+    const { name } = req.body;
     const newAuthor = await prisma.author.create({
       data: {
-        firstname,
-        lastname,
+        name,
       },
     });
     res.status(200).json(newAuthor);

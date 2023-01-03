@@ -3,7 +3,7 @@ import prisma from "../../../../prisma/client";
 
 const updatedAuthor: AuthorHandlers["update"] = async (req, res) => {
   try {
-    const { firstname, lastname } = req.body;
+    const { name } = req.body;
     const { id } = req.params;
 
     const updatedAuthor = await prisma.author.update({
@@ -11,8 +11,7 @@ const updatedAuthor: AuthorHandlers["update"] = async (req, res) => {
         id,
       },
       data: {
-        firstname,
-        lastname,
+        name,
       },
     });
     res.status(200).json(updatedAuthor);

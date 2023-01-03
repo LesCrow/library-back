@@ -3,8 +3,7 @@ import { RequestHandler } from "express";
 import { ResponseError } from "../globalTypes/ResponseError";
 
 type AuthorBodyCreate = {
-  firstname: string;
-  lastname: string;
+  name: string;
 };
 
 export interface AuthorHandlers {

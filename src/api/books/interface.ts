@@ -6,12 +6,14 @@ type BookBodyCreate = {
   title: string;
   authorId: string;
   genreId: string;
+  alreadyRead: boolean;
 };
 
 type BookBodyUpdate = {
   title: string;
   authorId: string;
   genreId: string;
+  alreadyRead: boolean;
 };
 
 type GetAllQueryParams = {
