@@ -1,10 +1,10 @@
 import prisma from "../../../../prisma/client";
-import { ICollectionHandlers } from "../interface";
+import { IGenreHandlers } from "../interface";
 
-const deleteOneCollection: ICollectionHandlers["delete"] = async (req, res) => {
+const deleteOneGenre: IGenreHandlers["delete"] = async (req, res) => {
   try {
     const { id } = req.params;
-    const deletedCollection = await prisma.collection.delete({
+    const deletedCollection = await prisma.genre.delete({
       where: {
         id,
       },
@@ -15,4 +15,4 @@ const deleteOneCollection: ICollectionHandlers["delete"] = async (req, res) => {
   }
 };
 
-export default deleteOneCollection;
+export default deleteOneGenre;
